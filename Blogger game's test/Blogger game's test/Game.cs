@@ -8,7 +8,7 @@ namespace Blogger_game_s_test
 {
     class Game
     {
-        public const int FRAME_NUMBER = 30;     //  общее количество количество мест сцен в игре (примерно)
+        public const int FRAME_COUNT = 30;     //  общее количество количество мест сцен в игре (примерно)
 
         private Frame first;
         private Frame current;
@@ -16,7 +16,7 @@ namespace Blogger_game_s_test
 
         public Game()
         {
-            frames = new Frame[FRAME_NUMBER];
+            frames = new Frame[FRAME_COUNT];
             build();
             first = current = frames[0];
         }
