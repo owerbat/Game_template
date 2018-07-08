@@ -8,12 +8,15 @@ namespace Blogger_game_s_test
 {
     class Frame
     {
+        public enum frame_types { USUAL, FACT, AUTOGRAPH, PHOTO, SECRET, VIDEO }
+
         private string picture_name;
         private string blogger_phrase;
         private int phrases_count; // 1 <= fc <= 4
         private string[] user_phrases;
         private Frame[] links;
         private string voice_name;
+        public frame_types type_of_frame;
 
         public Frame(string bp = "", int count = 4)
         {
@@ -27,6 +30,7 @@ namespace Blogger_game_s_test
                 user_phrases[i] = "";
                 links[i] = null;
             }
+            type_of_frame = frame_types.USUAL;
         }
 
         public string get_picture()
@@ -85,6 +89,16 @@ namespace Blogger_game_s_test
             if (number < 0 || number >= phrases_count)
                 throw new Exception("There is no that link");
             links[number] = frame;
+        }
+
+        public string get_voice()
+        {
+            return voice_name;
+        }
+
+        public void set_voice(string name)
+        {
+            voice_name = name;
         }
     }
 }
